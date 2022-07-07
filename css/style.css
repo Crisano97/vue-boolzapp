@@ -44,7 +44,7 @@
 
 .notification {
     background-color: #8EDAFC;
-    padding: 20px;
+    padding: 10px;
 }
 
 .notification-icon {
@@ -52,6 +52,11 @@
     color: #8EDAFC;
     background-color: white;
     border-radius: 50%;
+}
+
+.notification a {
+    color: gray;
+    font-size: 12px;
 }
 
 .start-new-chat {
@@ -85,7 +90,26 @@
 
 .mid-chat-cnt {
     height: 86%;
+    padding: 50px;
     background-image: url("../img/mine.jpg");
+}
+
+.message-sent, .message-received {
+    width: 300px;
+    height: 60px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.message-sent {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.message-received {
+    background-color: white;
+    align-self: flex-start;
+
 }
 
 .bottom-chat-cnt {
