@@ -59,6 +59,7 @@
 
 .current-chat {
     padding: 10px;
+    border-bottom: 1px solid #DADBD5;
 }
 
 .current-chat img {

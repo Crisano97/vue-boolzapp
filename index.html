@@ -45,7 +45,8 @@
                                             </div>
                                             <div class="start-new-chat"></div>
                                             <div class="current-chat" v-for="(contact, index) in contacts">
-                                                <img :src="'./img/avatar' + contacts[index].avatar + '.jpg'" alt="">
+                                                <img :src="'./img/avatar' + contacts[index].avatar + '.jpg'" :alt="contacts[index].name">
+                                                <span> {{ contacts[index].name }} </span>
                                             </div>
                                         </div>
                                     </div>
