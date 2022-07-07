@@ -1,0 +1,17 @@
+.top-background {
+    height: 15vh;
+    background-color: #009688;
+}
+
+.bottom-background {
+    height: 85vh;
+    background-color: #DADBD5;
+}
+
+.main-container {
+    position: absolute;
+    height: 95vh;
+    background-color: gray;
+    top: 20px;
+    left: 120px;
+}
