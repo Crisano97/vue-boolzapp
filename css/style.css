@@ -16,3 +16,17 @@
     top: 5%;
     left: 10%;
 }
+.main-container .container-fluid, .row{
+    height: 100%;
+}
+
+.left_col {
+    height: 100%;
+    background-color: white;
+}
+
+.right_col {
+    height: 100%;
+    background-color: antiquewhite;
+}
+
