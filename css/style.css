@@ -9,10 +9,10 @@
 }
 
 .main-container {
+    background-color: #DADBD5;
     position: absolute;
     width: 80%;
     height: 90%;
-    background: bisque;
     top: 5%;
     left: 10%;
 }
@@ -28,22 +28,52 @@
 
 .top-nav-cnt {
     height: 7%;
-    background-color: burlywood;
+    background-color: #EAEAEA;
+}
+
+.user-img {
+    width: 100%;
+    border-radius: 50%;
 }
 
 .bottom-nav-cnt {
     height: 93%;
-    background-color: brown;
+    background-color: white;
+}
+
+.notification {
+    background-color: #8EDAFC;
+    padding: 20px;
+}
+
+.notification-icon {
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.start-new-chat {
+    padding: 20px;
+    background-color: #FAFAFA;
+}
+
+.current-chat {
+    padding: 10px;
+}
+
+.current-chat img {
+    width: 50px;
+    border-radius: 50%;
 }
 
 .right_col {
     height: 100%;
-    background-color: antiquewhite;
+    border-left: 2px solid #DADBD5;
 }
 
 .top-chat-cnt {
     height: 7%;
-    background-color: blueviolet;
+    background-color: #EAEAEA;
 }
 
 .mid-chat-cnt {
@@ -53,6 +83,16 @@
 
 .bottom-chat-cnt {
     height: 7%;
-    background-color: blueviolet;
+    background-color: #EAEAEA;
 }
+
+
+.user, .interactions {
+    /* height: 100%; */
+    /* width: 20%; */
+    padding: 10px;
+    /* background-color: white; */
+    /* border: 1px solid black; */
+}
+
 

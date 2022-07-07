@@ -28,15 +28,36 @@
                             <div class="col-4 left_col">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-12 top-nav-cnt"></div>
-                                        <div class="col-12 bottom-nav-cnt"></div>
+                                        <div class="col-12 top-nav-cnt d-flex justify-content-between p-0">
+                                            <div class="user d-flex">
+                                                <img class="user-img" src="./img/avatar_io.jpg" alt="user-pic">
+                                                <span>Sofia</span>
+                                            </div>
+                                            <div class="interactions">
+                                                <i class="fa-solid fa-circle-notch"></i>
+                                                <i class="fa-solid fa-message"></i>
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 bottom-nav-cnt p-0">
+                                            <div class="notification">
+                                                <span class="notification-icon"><i class="fa-solid fa-bell-slash"></i></span>
+                                            </div>
+                                            <div class="start-new-chat"></div>
+                                            <div class="current-chat" v-for="(contact, index) in contacts">
+                                                <img :src="'./img/avatar' + contacts[index].avatar + '.jpg'" alt="">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-8 right_col">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-12 top-chat-cnt"></div>
+                                        <div class="col-12 top-chat-cnt d-flex justify-content-between p-0">
+                                            <div class="user"></div>
+                                            <div class="interactions"></div>
+                                        </div>
                                         <div class="col-12 mid-chat-cnt"></div>
                                         <div class="col-12 bottom-chat-cnt"></div>
                                     </div>
