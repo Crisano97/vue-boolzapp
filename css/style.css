@@ -27,16 +27,17 @@
 }
 
 .top-nav-cnt {
-    height: 7%;
+    height: 60px;
     background-color: #EAEAEA;
 }
 
 .user-img {
-    width: 100%;
+    width: 40px;
     border-radius: 50%;
 }
 
 .bottom-nav-cnt {
+    overflow: auto;
     height: 93%;
     background-color: white;
 }
@@ -48,12 +49,13 @@
 
 .notification-icon {
     padding: 10px;
+    color: #8EDAFC;
     background-color: white;
     border-radius: 50%;
 }
 
 .start-new-chat {
-    padding: 20px;
+    padding: 5px;
     background-color: #FAFAFA;
 }
 
@@ -73,20 +75,39 @@
 }
 
 .top-chat-cnt {
-    height: 7%;
+    height: 60px;
     background-color: #EAEAEA;
+}
+
+.top-chat-cnt img {
+    width: 40px;
 }
 
 .mid-chat-cnt {
     height: 86%;
-    background-color: burlywood;
+    background-image: url("../img/mine.jpg");
 }
 
 .bottom-chat-cnt {
-    height: 7%;
+    height: 60px;
     background-color: #EAEAEA;
 }
 
+.bottom-chat-cnt .interactions {
+    height: 40px;
+}
+
+.bottom-chat-cnt input {
+    height: 40px;
+}
+
+.message {
+    font-size: 1rem;
+}
+
+div .interactions {
+    color: #B1B1B1;
+}
 
 .user, .interactions {
     /* height: 100%; */
@@ -96,4 +117,6 @@
     /* border: 1px solid black; */
 }
 
-
+.my_input_fs {
+    font-size: 10px;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,16 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>BOOLZAPP</title>
     <!-- font-awwsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- my css -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 
     <div id="app">
@@ -28,8 +32,8 @@
                             <div class="col-4 left_col">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-12 top-nav-cnt d-flex justify-content-between p-0">
-                                            <div class="user d-flex">
+                                        <div class="col-12 top-nav-cnt d-flex justify-content-between align-items-center p-0">
+                                            <div class="user">
                                                 <img class="user-img" src="./img/avatar_io.jpg" alt="user-pic">
                                                 <span>Sofia</span>
                                             </div>
@@ -40,13 +44,27 @@
                                             </div>
                                         </div>
                                         <div class="col-12 bottom-nav-cnt p-0">
-                                            <div class="notification">
-                                                <span class="notification-icon"><i class="fa-solid fa-bell-slash"></i></span>
+                                            <div class="notification  d-flex">
+                                                <span class="notification-icon">
+                                                    <i class="fa-solid fa-bell-slash"></i>
+                                                </span>
+                                                <div class="span-container mx-2">
+                                                    <span class="d-block">Ricevi notifivhe di nuovi messaggi</span>
+                                                    <a href="#">Attiva notifiche desktop</a>
+                                                </div>
                                             </div>
-                                            <div class="start-new-chat"></div>
-                                            <div class="current-chat" v-for="(contact, index) in contacts">
-                                                <img :src="'./img/avatar' + contacts[index].avatar + '.jpg'" :alt="contacts[index].name">
-                                                <span> {{ contacts[index].name }} </span>
+                                            <div class="start-new-chat d-flex">
+                                                <button class="btn btn-light">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                                </button>
+                                            <input type="text" class="form-control my_input_fs" placeholder="cerca o inizia una nuova chat">
+                                            </div>
+                                            <div class="chat container p-0">
+                                                <div class="current-chat" v-for="(contact, index) in contacts">
+                                                    <img :src="'./img/avatar' + contacts[index].avatar + '.jpg'"
+                                                        :alt="contacts[index].name">
+                                                    <span> {{ contacts[index].name }} </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -55,23 +73,39 @@
                             <div class="col-8 right_col">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-12 top-chat-cnt d-flex justify-content-between p-0">
-                                            <div class="user"></div>
-                                            <div class="interactions"></div>
+                                        <div class="col-12 top-chat-cnt d-flex justify-content-between align-items-center p-0">
+                                            <div class="user">
+                                                <img class="user-img" src="./img/avatar_1.jpg" alt="user-pic">
+                                                <span>Michele</span>
+                                            </div>
+                                            <div class="interactions">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                                <i class="fa-solid fa-paperclip"></i>
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </div>
                                         </div>
                                         <div class="col-12 mid-chat-cnt"></div>
-                                        <div class="col-12 bottom-chat-cnt"></div>
+                                        <div class="col-12 bottom-chat-cnt d-flex justify-content-between align-items-center">
+                                            <div class="interactions">
+                                                <i class="fa-regular fa-face-smile"></i>
+                                            </div>
+                                            <input type="text" class="form-control my_input_fs" placeholder="scrivi un messaggio">
+                                            <div class="interactions">
+                                                <i class="fa-solid fa-microphone"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script src="./js/main.js"></script>
 </body>
+
 </html>
