@@ -6,6 +6,10 @@ const app = new Vue (
 
             activeIndex: 0,
 
+            messageSent: 'message-sent',
+
+            messageReceived: 'message-received',
+
             contacts: [
                 {
                     name: 'Michele',

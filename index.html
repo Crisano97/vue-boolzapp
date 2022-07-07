@@ -86,8 +86,9 @@
                                             </div>
                                         </div>
                                         <div class="col-12 mid-chat-cnt d-flex flex-column">
-                                            <div class="message-sent"></div>
-                                            <div class="message-received"></div>
+                                            <div class=" user-message"  v-for="message in contacts[activeIndex].messages" :class="(message.status == 'sent') ? messageSent : messageReceived">
+                                                {{ message.message }}
+                                            </div>
                                         </div>
                                         <div class="col-12 bottom-chat-cnt d-flex justify-content-between align-items-center">
                                             <div class="interactions">
