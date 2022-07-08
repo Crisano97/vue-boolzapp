@@ -188,9 +188,14 @@ const app = new Vue (
                     this.newMessage = '';
                 }
             },
-            newContactAnswer: function(answer){
-                this.contacts[this.activeIndex].messages.push({message: answer, status: 'received'});
+            // newContactAnswer: function(answer){
+            //     this.contacts[this.activeIndex].messages.push({message: answer, status: 'received'});
 
+            // },
+            newContactAnswer: function(answer) {
+                setTimeout(() => {
+                this.contacts[this.activeIndex].messages.push({message: answer, status: 'received'});
+                }, 1000);
             }
         }
     }
