@@ -197,8 +197,8 @@ const app = new Vue (
             filterContacts: function(){
                 for (let i = 0; i < this.contacts.length; i++){
 
-                    const searchBarLowerCase = this.search.toLowerCase();
-                    const contactLowerCase = this.contacts[i].name.toLowerCase();
+                    let searchBarLowerCase = this.search.toLowerCase();
+                    let contactLowerCase = this.contacts[i].name.toLowerCase();
 
                     if(searchBarLowerCase === '') {
                         this.contacts[i].visible = true;
