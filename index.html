@@ -57,13 +57,16 @@
                                                 <button class="btn btn-light">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                                 </button>
-                                            <input type="text" class="form-control my_input_fs" placeholder="cerca o inizia una nuova chat">
+                                            <input v-model="search" type="text" class="form-control my_input_fs" placeholder="cerca o inizia una nuova chat">
                                             </div>
                                             <div class="chat container p-0">
-                                                <div class="current-chat" :class="{active: index == activeIndex}" v-for="(contact, index) in contacts" @click="setActiveIndex(index)">
+                                                <div class="current-chat d-flex align-items-center" :class="{active: index == activeIndex}" v-for="(contact, index) in filteredContacts" @click="setActiveIndex(index)">
                                                     <img :src="'./img/avatar' + contacts[index].avatar + '.jpg'"
                                                         :alt="contacts[index].name">
-                                                    <span> {{ contacts[index].name }} </span>
+                                                    <div class="info-container mx-2">
+                                                        <span class="d-block"> {{ contacts[index].name }} </span>
+                                                        <span class="txt-g">Ultimo messaggio inviato</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,10 +77,13 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-12 top-chat-cnt d-flex justify-content-between align-items-center p-0">
-                                            <div class="user">
+                                            <div class="user d-flex align-items-center">
                                                 <img class="user-img" :src="'./img/avatar' + contacts[activeIndex].avatar + '.jpg'"
                                                         :alt="contacts[activeIndex].name">
-                                                    <span> {{ contacts[activeIndex].name }} </span>
+                                                        <div class="info-container mx-2">
+                                                            <span class="d-block"> {{ contacts[activeIndex].name }} </span>
+                                                            <span class="txt-g">Ultimo accesso</span>
+                                                        </div>
                                             </div>
                                             <div class="interactions">
                                                 <i class="fa-solid fa-magnifying-glass"></i>

@@ -3,6 +3,7 @@ const app = new Vue (
         el: '#app',
 
         data: {
+            search: '',
 
             activeIndex: 0,
 
@@ -192,7 +193,15 @@ const app = new Vue (
                 setTimeout(() => {
                 this.contacts[this.activeIndex].messages.push({message: answer, status: 'received'});
                 }, 1000);
+            },
+            
+        },
+        computed: {
+            filteredContacts() {
+              return this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(this.search.toLowerCase())
+              })
             }
-        }
+          }
     }
 )
