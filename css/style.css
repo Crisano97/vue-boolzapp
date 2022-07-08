@@ -96,7 +96,6 @@
 
 .user-message {
     width: 300px;
-    /* height: 60px; */
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 10px;
@@ -135,11 +134,7 @@ div .interactions {
 }
 
 .user, .interactions {
-    /* height: 100%; */
-    /* width: 20%; */
     padding: 10px;
-    /* background-color: white; */
-    /* border: 1px solid black; */
 }
 
 .my_input_fs {

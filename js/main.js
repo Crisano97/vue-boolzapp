@@ -6,6 +6,8 @@ const app = new Vue (
 
             activeIndex: 0,
 
+            newMessage: '',
+
             messageSent: 'message-sent',
 
             messageReceived: 'message-received',
@@ -177,6 +179,12 @@ const app = new Vue (
         methods: {
             setActiveIndex: function(index){
                 this.activeIndex = index;
+            },
+            addNewMessage: function(newElement){
+                if(!newElement == '') {
+                    this.contacts[this.activeIndex].messages.push({message: newElement, status: 'sent'});
+                    this.newMessage = '';
+                }
             }
         }
     }
