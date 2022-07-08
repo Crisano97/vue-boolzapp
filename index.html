@@ -57,10 +57,10 @@
                                                 <button class="btn btn-light">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                                 </button>
-                                            <input v-model="search" type="text" class="form-control my_input_fs" placeholder="cerca o inizia una nuova chat">
+                                            <input v-model="search" type="text" class="form-control my_input_fs" placeholder="cerca o inizia una nuova chat" v-on:keyup.enter="filterContacts()">
                                             </div>
                                             <div class="chat container p-0">
-                                                <div class="current-chat d-flex align-items-center" :class="{active: index == activeIndex}" v-for="(contact, index) in filteredContacts" @click="setActiveIndex(index)">
+                                                <div class="current-chat d-flex align-items-center" :class="{active: index == activeIndex}" v-for="(contact, index) in contacts" @click="setActiveIndex(index)">
                                                     <img :src="'./img/avatar' + contacts[index].avatar + '.jpg'"
                                                         :alt="contacts[index].name">
                                                     <div class="info-container mx-2">

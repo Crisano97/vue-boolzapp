@@ -194,14 +194,24 @@ const app = new Vue (
                 this.contacts[this.activeIndex].messages.push({message: answer, status: 'received'});
                 }, 1000);
             },
-            
-        },
-        computed: {
-            filteredContacts() {
-              return this.contacts.filter(contact => {
-                return contact.name.toLowerCase().includes(this.search.toLowerCase())
-              })
+            filterContacts: function(){
+                for (let i = 0; i < this.contacts.length; i++){
+
+                    const searchBarLowerCase = this.search.toLowerCase();
+                    const contactLowerCase = this.contacts[i].name.toLowerCase();
+
+                    if(searchBarLowerCase === '') {
+                        this.contacts[i].visible = true;
+                    } else {
+                        if(!contactLowerCase.includes(searchBarLowerCase)) {
+                            this.contacts[i].visible = false;
+                        } else {
+                            this.contacts[i].visible = true;
+                        }
+                    }
+                };
             }
-          }
+        },
+       
     }
 )
