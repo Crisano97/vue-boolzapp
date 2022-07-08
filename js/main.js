@@ -8,6 +8,8 @@ const app = new Vue (
 
             newMessage: '',
 
+            contactAnswer: 'ok',
+
             messageSent: 'message-sent',
 
             messageReceived: 'message-received',
@@ -185,6 +187,10 @@ const app = new Vue (
                     this.contacts[this.activeIndex].messages.push({message: newElement, status: 'sent'});
                     this.newMessage = '';
                 }
+            },
+            newContactAnswer: function(answer){
+                this.contacts[this.activeIndex].messages.push({message: answer, status: 'received'});
+
             }
         }
     }
