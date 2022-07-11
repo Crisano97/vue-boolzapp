@@ -15,6 +15,8 @@ const app = new Vue (
 
             messageReceived: 'message-received',
 
+            dropdownMenu: false,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -210,6 +212,9 @@ const app = new Vue (
                         }
                     }
                 };
+            },
+            deleteMessage: function(index, array){
+                array.splice(index, 1);
             }
         },
        
