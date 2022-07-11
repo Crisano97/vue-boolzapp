@@ -187,13 +187,13 @@ const app = new Vue (
             },
             addNewMessage: function(newElement){
                 if(!newElement == '') {
-                    this.contacts[this.activeIndex].messages.push({message: newElement, status: 'sent', date: moment().format("HH:mm")});
+                    this.contacts[this.activeIndex].messages.push({message: newElement, status: 'sent', date: moment()});
                     this.newMessage = '';
                 }
             },
             newContactAnswer: function(answer) {
                 setTimeout(() => {
-                this.contacts[this.activeIndex].messages.push({message: answer, status: 'received', date: moment().format("HH:mm")});
+                this.contacts[this.activeIndex].messages.push({message: answer, status: 'received', date: moment()});
                 }, 1000);
             },
             filterContacts: function(){
@@ -223,8 +223,8 @@ const app = new Vue (
                 return lastMessage;
             },
             messagesTime: function(i){
-                const allMessages = this.contacts[i].messages;
-                const currentMessages = allMessages.length;
+                const allMessages = this.contacts[this.activeIndex].messages;
+                const currentMessages = allMessages[i];
                 const messagesHour = moment(currentMessages.date, 'DD/MM/YYYY hh:mm:ss').format("HH:mm");
                 return messagesHour;
             },
