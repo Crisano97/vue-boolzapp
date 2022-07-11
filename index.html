@@ -109,7 +109,7 @@
                                                 :class="(message.status == 'sent') ? messageSent : messageReceived">
                                                 {{ message.message }}
                                                 <span class="time">
-                                                    {{ message.date }}
+                                                    {{ messagesTime(index) }}
                                                 </span>
                                                 <i class="fa-solid fa-chevron-down my_dropdown"
                                                     @click="(dropdownMenu === false) ? dropdownMenu = true : dropdownMenu = false">
