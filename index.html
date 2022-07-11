@@ -67,15 +67,16 @@
                                                     v-on:keyup="filterContacts()">
                                             </div>
                                             <div class="chat container p-0">
-                                                <div class="current-chat d-flex align-items-center"
+                                                <div class="current-chat d-flex align-items-center position-relative"
                                                     :class="{active: index == activeIndex}"
                                                     v-for="(contact, index) in contacts" v-if="contact.visible"
                                                     @click="setActiveIndex(index)">
                                                     <img :src="'./img/avatar' + contacts[index].avatar + '.jpg'"
                                                         :alt="contacts[index].name">
-                                                    <div class="info-container mx-2">
+                                                    <div class="info-container mx-2 ">
                                                         <span class="d-block"> {{ contacts[index].name }} </span>
-                                                        <span class="txt-g">Ultimo messaggio inviato</span>
+                                                        <span class="txt-g">{{ lastMessage(index) }}</span>
+                                                        <span class="txt-g position-absolute top-0 end-0">{{ lastMessageTime(index) }} </span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -107,12 +108,14 @@
                                             <div class=" user-message" v-for="(message, index) in contacts[activeIndex].messages"
                                                 :class="(message.status == 'sent') ? messageSent : messageReceived">
                                                 {{ message.message }}
-                                                <span></span>
+                                                <span class="time">
+                                                    {{ message.date }}
+                                                </span>
                                                 <i class="fa-solid fa-chevron-down my_dropdown"
                                                     @click="(dropdownMenu === false) ? dropdownMenu = true : dropdownMenu = false">
-
+                                                    
                                                 </i>
-                                                <div class="delete-message"
+                                                <div class="dropdown-menu"
                                                     :class="(dropdownMenu === true) ? 'show' : 'hidden'" @click="deleteMessage(index, contacts[activeIndex].messages)">
                                                     Delete message
                                                 </div>

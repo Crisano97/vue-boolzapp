@@ -215,6 +215,21 @@ const app = new Vue (
             },
             deleteMessage: function(index, array){
                 array.splice(index, 1);
+            },
+            lastMessage: function(i){
+                const allMessages = this.contacts[i].messages;
+                const currentLastMessage = allMessages[allMessages.length - 1];
+                const lastMessage = currentLastMessage.message;
+                return lastMessage;
+            },
+            lastMessageTime: function(i){
+                const allMessages = this.contacts[i].messages;
+                const currentLastMessage = allMessages[allMessages.length - 1];
+                const lastMessage = currentLastMessage.message;
+                const messageDate = lastMessage.date;
+                const lastMessageHour = moment(messageDate).format('HH:mm')
+                
+                return lastMessageHour;
             }
         },
        
