@@ -112,10 +112,10 @@
                                                     {{ messagesTime(index) }}
                                                 </span>
                                                 <i class="fa-solid fa-chevron-down my_dropdown"
-                                                    @click="(dropdownMenu === false) ? dropdownMenu = true : dropdownMenu = false">
+                                                    @click="toggle(index)" >
                                                     
                                                 </i>
-                                                <div class="dropdown-menu"
+                                                <div class="dropdown-menu" v-if="index === messageClicked"
                                                     :class="(dropdownMenu === true) ? 'show' : 'hidden'" @click="deleteMessage(index, contacts[activeIndex].messages)">
                                                     Delete message
                                                 </div>

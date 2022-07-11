@@ -17,6 +17,8 @@ const app = new Vue (
 
             dropdownMenu: false,
 
+            messageClicked: '',
+
             contacts: [
                 {
                     name: 'Michele',
@@ -234,7 +236,14 @@ const app = new Vue (
                 const lastMessageHour = moment(currentLastMessage.date, 'DD/MM/YYYY hh:mm:ss').format("HH:mm");
                 return lastMessageHour;
             },
-            
+            toggle: function(index){
+                this.messageClicked = index;
+                if (this.dropdownMenu === false){
+                    this.dropdownMenu = true;
+                } else {
+                    this.dropdownMenu = false;
+                }
+            }   
         },
        
     }
