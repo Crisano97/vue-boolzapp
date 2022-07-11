@@ -225,10 +225,8 @@ const app = new Vue (
             lastMessageTime: function(i){
                 const allMessages = this.contacts[i].messages;
                 const currentLastMessage = allMessages[allMessages.length - 1];
-                const lastMessage = currentLastMessage.message;
-                const messageDate = lastMessage.date;
-                const lastMessageHour = moment(messageDate).format('HH:mm')
-                
+                const lastMessageHour = moment(currentLastMessage.date, 'DD/MM/YYYY hh:mm:ss').format("HH:mm");
+
                 return lastMessageHour;
             }
         },
